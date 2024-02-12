@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Google -->
+
+    <!-- Icon email -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!-- Icon Pass -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+
+  <body>
+    <main>
+      <!-- left_Image -->
+      <div class="left">
+        <img src="img/cyberLock.jpeg" alt="cyberLock image" />
+      </div>
+
+      <!-- right_SignUp -->
+      <div class="right">
+        <h1>Sign-In Page</h1>
+        <!-- no database but best pratice to write it -->
+
+        <form action="#" method="get">
+          <!-- add Pseudo-element before to add text before input -->
+          <div>
+            <label for="email">
+              <span class="material-symbols-outlined"> mail </span>
+            </label>
+            <input
+              id="emailChecker"
+              type="text"
+              name="email"
+              placeholder="Email"
+              minlength="10"
+              value=""
+              onchange="emailAlarm()"
+            />
+          </div>
+
+          <!-- add same as up and add after to check power of password -->
+          <div>
+            <label for="pass" id="passLength">
+              <span class="material-symbols-outlined">lock</span>
+            </label>
+            <input
+              id="passChecker"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              minlength="8"
+              maxlength="24"
+              value=""
+            />
+          </div>
+
+          <br />
+          <div class="output">
+            <button type="submit" id="submit">submit</button>
+            <button type="reset" id="reset">reset</button>
+          </div>
+          <span id="redMesg"></span>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,390 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+https://coolors.co/palette/03045e-0077b6-00b4d8-90e0ef-caf0f8
+i change some color a little bit :D
+*/
+:root {
+    --left-color: #caf0f8;
+    --label-color: #caf0f8;
+    --button-color: #00b4d8;
+    --right-color: #90e0ef;
+    --body-color: #3b48a1;
+    --redMesg-color: #03045e;
+    --text-color: #e7ecef;
+}
+
+body {
+    background-color: var(--body-color);
+    font-family: 'Lato', sans-serif;
+}
+
+/* media query */
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    body {
+        /* i remake color if image get damage */
+        background-color: whitesmoke;
+        background-image: url(img/cyberLock.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-size: 15pt;
+    }
+
+    main .right {
+        width: 70%;
+        opacity: 0.9;
+        border-radius: 50px 50px 50px 50px;
+    }
+
+    main .left {
+        display: none;
+    }
+
+    .right h1 {
+        font-size: 25pt;
+    }
+
+    .right form input {
+        width: 80%;
+    }
+
+    .right form .output {
+        flex-direction: column;
+    }
+
+    .right form .output button {
+        margin-bottom: 20px;
+    }
+
+    .right form input {
+        width: 100%;
+        height: 40%;
+        size: 220%;
+    }
+
+    .right form .output #submit,
+    #reset {
+        font-size: 15pt;
+        margin-bottom: 15px;
+    }
+}
+
+/* Small Screens */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        /* i remake color if image get damage */
+        background-color: whitesmoke;
+        background-image: url(img/cyberLock.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-size: 15pt;
+    }
+
+    main .right {
+        width: 70%;
+        opacity: 0.9;
+        border-radius: 50px 50px 50px 50px;
+    }
+
+    main:active {
+        opacity: 100%;
+    }
+
+    main .left {
+        display: none;
+    }
+
+    .right h1 {
+        font-size: 25pt;
+    }
+
+    .right form input {
+        width: 100%;
+        height: 40%;
+        size: 220%;
+    }
+
+    main .right form .output {
+        margin-bottom: 20px;
+    }
+
+    .right form .output #submit,
+    #reset {
+        font-size: 15pt;
+        margin-bottom: 15px;
+    }
+}
+
+/* Medium Screens */
+
+@media (min-width: 992px) {
+    main {
+        width: 60%;
+    }
+}
+
+/* Large Screens */
+
+@media (min-width: 1200px) {
+    main {
+        width: 80%;
+    }
+}
+
+/* * Whole Design */
+main {
+    width: 80%;
+    height: calc(100vh - 100px);
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.left {
+    width: 50%;
+    height: inherit;
+    text-align: center;
+    background-color: var(--left-color);
+    border-radius: 25px 50px 50px 25px;
+    /* animation: leftBorder 2s linear infinite ; */
+}
+
+.left img {
+    width: 90%;
+    height: inherit;
+    border-radius: 50px;
+    opacity: 0.7;
+    animation: lockLiving 2s ease infinite;
+}
+
+.right {
+    width: 30%;
+    margin-left: 5px;
+    height: inherit;
+    background-color: var(--right-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 50px 25px 25px 50px;
+    animation: rightBorder 2s linear infinite;
+}
+
+.right h1 {
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+.right form {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* * add label and set margin */
+
+.right form label {
+    color: var(--label-color);
+    margin: 0 auto -15px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-transform: capitalize;
+}
+
+.right form input {
+    display: block;
+    padding-left: 5px;
+    margin: 20px auto;
+    outline: none;
+}
+
+.right form div input::placeholder {
+    color: var(--body-color);
+}
+
+/* * button handle */
+
+.right form .output {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* * button radius */
+
+.right form .output button {
+    width: 6em;
+    height: 2em;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 50px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+/* * some animation */
+
+.right form .output button:hover {
+    background: var(--body-color);
+}
+
+.right form .output button:active {
+    transform: translateY(2px);
+}
+
+/* !red Mesg for Error */
+.right form #redMesg {
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--text-color);
+    background-color: var(--redMesg-color);
+    opacity: 0.7;
+    font-style: italic;
+    visibility: hidden;
+}
+
+/* animation */
+@keyframes lockLiving {
+    0% {
+        margin-left: 20px;
+    }
+
+    50% {
+        margin-right: 20px;
+    }
+
+    75% {
+        margin-left: -20px;
+    }
+
+    100% {
+        margin-right: -20px;
+    }
+}
+
+/* i need 2 , 3 */
+/*
+@keyframes leftBorder {
+    0%   {border-radius: 25px 50px 50px 25px;}
+    25%  {border-radius: 25px 55px 55px 25px;}
+    50%  {border-radius: 25px 60px 60px 25px;}
+    75%  {border-radius: 25px 55px 55px 25px;}
+    100% {border-radius: 25px 50px 50px 25px}
+}
+*/
+@keyframes rightBorder {
+    0% {
+        border-radius: 50px 25px 25px 50px;
+    }
+
+    25% {
+        border-radius: 60px 25px 25px 60px;
+    }
+
+    50% {
+        border-radius: 65px 25px 25px 65px;
+    }
+
+    75% {
+        border-radius: 60px 25px 25px 60px;
+    }
+
+    100% {
+        border-radius: 50px 25px 25px 50px;
+    }
+}
+
+/* shake */
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+
+    25% {
+        margin-left: 0.5rem;
+    }
+
+    75% {
+        margin-left: -0.5rem;
+    }
+
+    100% {
+        margin-left: 0rem;
+    }
+}
+
+input:invalid {
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.6rem #ff0000;
+}
+
+/* ?Errors need to search and test */
+
+/* passLength to test power of password + still not work */
+/* .right form div #passLength::after {
+    content: "";
+    width: 33.3%;
+    height: 6px;
+    color: red;
+    z-index: 2;
+    transform: translateX(10px);
+
+} */
+
+/* not work with input */
+/* .right form input[required]::after {
+    content: "email";
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    color: #f90000;
+    text-transform: capitalize;
+}
+.right form input[required]::after {
+    content: "password";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #f90000;
+    text-transform: capitalize;
+}     */
+
+/* if not work i will go to idea of P and div and Margin */
+
+/* what i learn is :-
+1. input can't add pseudo element
+2. phones , tablet can't hover on it
+3. I learn can do it 
+*Good Job >>
+
+*/
