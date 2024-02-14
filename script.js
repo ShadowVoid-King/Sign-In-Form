@@ -57,7 +57,7 @@ function emailAlarm() {
                 redMesgVisibility;
         }
         setTimeout(function() {
-            document.getElementById("redMesg").innerHTML = "";
+            document.getElementById("redMesg").style.visibility = "hidden";
         }, 5000);
         // !else
     } else{
